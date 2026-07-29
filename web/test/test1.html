@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>sandBox</title>
+        <script type="text/javascript" src="/resource/js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript">
+            function toggleByName() {
+                var arrChkBox = document.getElementsByName("chName");
+                $(arrChkBox).toggle();
+            }
+        </script>
+    </head>
+    <body>
+        <input type="radio" name="chName"/><br />
+        <input type="radio" name="chName"/><br />
+        <input type="radio" name="chName"/><br />
+        <input type="radio" name="chName"/><br />
+        <input type="button" onclick="toggleByName();" value="toggle"/>
+    </body>
+</html>

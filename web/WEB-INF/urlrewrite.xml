@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite>
+    <rule match-type="regex">
+        <name>IFRAME</name>
+        <from>^/advertise/view-frame/iframe_([0-9]+).link</from>
+        <to>/advertise/view/advHtml.jsp?id=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Javascript</name>
+        <from>^/advertise/js_core/single_([0-9]+).link</from>
+        <to>/advertise/view/advjs.jsp?id=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Single Preview</name>
+        <from>^/advertise/single/preview_([0-9]+).link</from>
+        <to>/advertise/view/advHtml.jsp?id=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Click Tracker</name>
+        <from>^/ads_tracker.link</from>
+        <to>/tracker.jsp</to>
+    </rule>
+    <!--GROUP - ADV MANAGER-->
+    <rule match-type="regex">
+        <name>Show Group Plugin html</name>
+        <from>^/link_add_code/add_box_([0-9]+).linkvn</from>
+        <to>/groupAdv/view/Viewhtml.jsp?gid=$1</to>
+    </rule> 
+    <rule match-type="regex">
+        <name>Show Group Plugin Javascrip</name>
+        <from>^/link_add_code/core_script_([0-9]+).linkvn</from>
+        <to>/groupAdv/view/pluginjs.jsp?gid=$1</to>
+    </rule>    
+    <rule match-type="regex">
+        <name>Group Preview - mau hien thi</name>
+        <from>^/groupAdv/view/preview.html</from>
+        <to>/groupAdv/view/Preview.jsp</to>
+    </rule> 
+    <rule match-type="regex">
+        <name>Group Preview Commpeleted</name>
+        <from>^/groupAdv/view/view-ads-([0-9]+).html</from>
+        <to>/groupAdv/view/Viewhtml.jsp?gid=$1</to>
+    </rule>    
+    <rule match-type="regex">
+        <name>Add ads to Group</name>
+        <from>^/groupAdv/add-ads/g([0-9]+)-a([0-9]+).link</from>
+        <to>/groupAdv/mapAds2Group.jsp?gid=$1&amp;aid=$2</to>
+    </rule> 
+    <!--    <rule match-type="regex">
+        <name>Add ads to Group</name>
+        <from>^/demo-statistic.html</from>
+        <to>/demo_statistic/statisticClick.jsp</to>
+    </rule>-->
+    <!--SITE MANAGER-->
+    <rule match-type="regex">
+        <name>Site Manager</name>
+        <from>^(/sys-admin/site-manager/)show.html</from>
+        <to>/siteManager/index.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Site Manager - Add</name>
+        <from>^(/sys-admin/site-manager/)add.html</from>
+        <to>/siteManager/addSite.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Site Manager - Edit</name>
+        <from>^(/sys-admin/site-manager/)edit-([0-9]+).html</from>
+        <to>/siteManager/editSite.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Site Manager - del</name>
+        <from>^(/sys-admin/site-manager/)del-([0-9]+).html</from>
+        <to>/siteManager/delSite.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Site Manager - del Ever</name>
+        <from>^(/sys-admin/site-manager/)delever-([0-9]+).html</from>
+        <to>/siteManager/delSite_ever.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <!--ADMIN GROUP ADV-->
+    <rule match-type="regex">
+        <name>Group Manager</name>
+        <from>^(/sys-admin/group-adv-manager/)show.html</from>
+        <to>/groupAdv/groupAdv.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group Manager - Add</name>
+        <from>^(/sys-admin/group-adv-manager/)add.html</from>
+        <to>/groupAdv/addGroup.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group Manager -Edit</name>
+        <from>^(/sys-admin/group-adv-manager/)edit-([0-9]+).html</from>
+        <to>/groupAdv/editGroup.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group Manager -Edit</name>
+        <from>^(/sys-admin/group-adv-manager/)del-([0-9]+).html</from>
+        <to>/groupAdv/delGroup.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group Manager -Edit</name>
+        <from>^(/sys-admin/group-adv-manager/)del-ever-([0-9]+).html</from>
+        <to>/groupAdv/delGroup_ever.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Find Ads do Add to Group</name>
+        <from>^(/sys-admin/group-adv-manager/)item-([0-9]+).html</from>
+        <to>/groupAdv/add_advertise.jsp?module=$1&amp;gid=$2</to>
+    </rule> 
+    <!--************************************************ ADMINISTRATOR ****************************************-->
+    <!--Home Admin-->
+    <rule match-type="regex">
+        <name>Home admin</name>
+        <from>^/sys$</from>
+        <to>/homesys.jsp</to>
+    </rule>
+    <rule match-type="regex">
+        <name>sys login</name>
+        <from>^/sys/login$</from>
+        <to>/login.jsp</to>
+    </rule>
+    <!--Advertise -manager-->
+    <rule match-type="regex">
+        <name>--Advertise View</name>
+        <from>^(/sys-admin/advertise-manager/)show.html</from>
+        <to>/advertise/advertise.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>--Advertise Add</name>
+        <from>^(/sys-admin/advertise-manager/)add-new$</from>
+        <to>/advertise/addAdvertise.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>--Advertise Edit</name>
+        <from>^(/sys-admin/advertise-manager/)edit/([0-9]+)</from>
+        <to>/advertise/editAdvertise.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>--Advertise Del</name>
+        <from>^(/sys-admin/advertise-manager/)del/([0-9]+)$</from>
+        <to>/advertise/delAdvertise.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>--Advertise Del Ever</name>
+        <from>^(/sys-admin/advertise-manager/)del/ever-([0-9]+)$</from>
+        <to>/advertise/delEver.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <!--ACCOUNT MANAGER-->
+    <rule match-type="regex">
+        <name>--Account View</name>
+        <from>^(/sys-admin/account-manager/)show.html$</from>
+        <to>/admin/index.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>--Account Add</name>
+        <from>^(/sys-admin/account-manager/)add.html$</from>
+        <to>/admin/add.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>--Account Edit</name>
+        <from>^(/sys-admin/account-manager/)edit-([0-9]+).html$</from>
+        <to>/admin/edit.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>--Account del</name>
+        <from>^(/sys-admin/account-manager/)del-([0-9]+).html$</from>
+        <to>/admin/del.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>--Account del</name>
+        <from>^(/sys-admin/account-manager/)role-([0-9]+).html$</from>
+        <to>/admin/role.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <!--Group Account Manager-->
+    <rule match-type="regex">
+        <name>Group user View</name>
+        <from>^(/sys-admin/group-manager/)show.html</from>
+        <to>/admin/group/group.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group user add</name>
+        <from>^(/sys-admin/group-manager/)add.html$</from>
+        <to>/admin/group/addGroup.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group user Edit</name>
+        <from>^(/sys-admin/group-manager/)edit-([0-9]+).html$</from>
+        <to>/admin/group/editGroup.jsp?module=$1&amp;id=$2</to>
+    </rule>   
+    <rule match-type="regex">
+        <name>Group user Del</name>
+        <from>^(/sys-admin/group-manager/)del-([0-9]+).html$</from>
+        <to>/admin/group/delgroup.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group Acc Show Account</name>
+        <from>^(/sys-admin/group-manager/)map-acc-([0-9]+).html$</from>
+        <to>/admin/group/showAcc.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group Acc: mapuser</name>
+        <from>^(/sys-admin/group-manager/)([0-9]+)-([0-9]+)$</from>
+        <to>/admin/group/map-user.jsp?module=$1&amp;gid=$2&amp;uid=$3</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group Role</name>
+        <from>^(/sys-admin/group-role/)([0-9]+)-show.html$</from>
+        <to>/admin/group/permission.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group Role</name>
+        <from>^(/sys-admin/group-role/)process-role.html$</from>
+        <to>/admin/group/permisionProcess.jsp?module=$1</to>
+    </rule>
+    <!-- Module Manager-->
+    <rule match-type="regex">
+        <name>Group user View</name>
+        <from>^(/sys-admin/module-manager/)show.html</from>
+        <to>/admin/module/module.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group user add</name>
+        <from>^(/sys-admin/module-manager/)add.html$</from>
+        <to>/admin/module/addModule.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group user Edit</name>
+        <from>^(/sys-admin/module-manager/)edit-([0-9]+).html$</from>
+        <to>/admin/module/editModule.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Group user Del</name>
+        <from>^(/sys-admin/module-manager/)del-([0-9]+).html$</from>
+        <to>/admin/module/delModule.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <!--STATISTIC-->
+    <rule match-type="regex">
+        <name>Thong ke click</name>
+        <from>^(/sys-admin/statistic/)click.html</from>
+        <to>/statistic/statisticClick.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Thong ke click Theo Tinh</name>
+        <from>^(/sys-admin/statistic/)city/click.html</from>
+        <to>/statistic/ClickByCity.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Thong ke click Theo Tinh</name>
+        <from>^(/sys-admin/statistic/)show/byads.html</from>
+        <to>/statistic/statisticShow.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Thong ke click Theo Tinh</name>
+        <from>^(/sys-admin/statistic/)click/detail-([0-9]+).html</from>
+        <to>/statistic/Clickdetail.jsp?module=$1&amp;adsId=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Thong ke click Theo Domain</name>
+        <from>^(/sys-admin/statistic/)show/bydomain.html</from>
+        <to>/statistic/clickByDomain.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Thong ke Tong click Cho San Pham</name>
+        <from>^(/sys-admin/statistic/)show/forProduct.html</from>
+        <to>/statistic/ClickForProDuct.jsp?module=$1</to>
+    </rule>
+    <!--CUSTOMER-->
+    <rule match-type="regex">
+        <name>Tai Khoan Nguoi Dung</name>
+        <from>^(/sys-admin/customer-user/)show.html</from>
+        <to>/customer/acc/index.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Tai Khoan Nguoi Dung Add</name>
+        <from>^(/sys-admin/customer-user/)add.html$</from>
+        <to>/customer/acc/add.jsp?module=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Tai Khoan Nguoi Dung Edit</name>
+        <from>^(/sys-admin/customer-user/)edit-([0-9]+).html$</from>
+        <to>/customer/acc/edit.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Tai Khoan Nguoi Dung Xoa</name>
+        <from>^(/sys-admin/customer-user/)del-([0-9]+).html$</from>
+        <to>/customer/acc/del.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Tai Khoan Nguoi Dung Role</name>
+        <from>^(/sys-admin/customer-user/)role-([0-9]+).html$</from>
+        <to>/customer/acc/role.jsp?module=$1&amp;id=$2</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Thong ke by Product for USER</name>
+        <from>^/customer/statistic/product/click.html$</from>
+        <to>/customer/static/Click.jsp</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Thong ke by Domain for CP</name>
+        <from>^/customer/statistic/domain/click.html$</from>
+        <to>/customer/static/clickDomain.jsp</to>
+    </rule>
+    <!--CUSTOMER INTERFACE-->
+    <rule match-type="regex">
+        <name>Customer Login</name>
+        <from>^/customer/login$</from>
+        <to>/login.jsp</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Customer Login</name>
+        <from>^/customer/logout$</from>
+        <to>/customer/out.jsp</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Customer Index</name>
+        <from>^/customer$</from>
+        <to>/customer/index.jsp</to>
+    </rule>
+    <!-- CUSTOMER ADVERTISE-->
+    <rule match-type="regex">
+        <name>Customer Ads View</name>
+        <from>^/customer/ads/manager.html$</from>
+        <to>/customer/ads/advertise.jsp</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Customer Ads Create</name>
+        <from>^/customer/ads/create.html$</from>
+        <to>/customer/ads/addAdvertise.jsp</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Customer Ads Create</name>
+        <from>^/customer/ads/edit/([0-9]+)$</from>
+        <to>/customer/ads/editAdvertise.jsp?id=$1</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Customer Ads Delete</name>
+        <from>^/customer/ads/del/([0-9]+)$</from>
+        <to>/customer/ads/delAdvertise.jsp?id=$1</to>
+    </rule>
+    <!-- CUSTOMER STATISTIC -->
+    <rule match-type="regex">
+        <name>Customer Ads Statistic</name>
+        <from>^/customer/statistic/click.html</from>
+        <to>/customer/static/Click.jsp</to>
+    </rule>
+    <rule match-type="regex">
+        <name>Customer Ads Statistic Detail</name>
+        <from>^/customer/statistic/click/detail-([0-9]+).html</from>
+        <to>/customer/static/Clickdetail.jsp?adsId=$1</to>
+    </rule>
+</urlrewrite>

@@ -1,0 +1,340 @@
+
+#ssvzone_6 {
+    height: 184px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: left;
+    width: 980px;
+}
+#ssvzone_6 * {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    font-family: tahoma,arial !important;
+    font-size: 11px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    text-transform: none !important;
+}
+#ssvzone_6 .ssvzTop, #ssvzone_6 .ssvzBottom {
+    clear: both;
+    height: 3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#ssvzone_6 .ssvzTop {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvborder.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}
+#ssvzone_6 .ssvzTop .ssvzRight {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvborder.png");
+    background-origin: padding-box;
+    background-position: 100% -3px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}
+#ssvzone_6 .ssvzTop .ssvzMid {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvborder.png");
+    background-origin: padding-box;
+    background-position: 0 -12px;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    height: 3px;
+    margin-bottom: 0;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 0;
+}
+#ssvzone_6 .ssvzBottom {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvborder.png");
+    background-origin: padding-box;
+    background-position: 0 -9px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}
+#ssvzone_6 .ssvzBottom .ssvzRight {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvborder.png");
+    background-origin: padding-box;
+    background-position: 100% -6px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}
+#ssvzone_6 .ssvzBottom .ssvzMid {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvborder.png");
+    background-origin: padding-box;
+    background-position: 0 -15px;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    height: 3px;
+    margin-bottom: 0;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 0;
+}
+#ssvzone_6 .ssvzContent {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvtop.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat-y;
+    background-size: auto auto;
+    clear: both;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#ssvzone_6 .ssvzContent .ssvzRight {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvtop.png");
+    background-origin: padding-box;
+    background-position: 100% 0;
+    background-repeat: repeat-y;
+    background-size: auto auto;
+}
+#ssvzone_6 .ssvzContent .ssvzMid {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #FFFFFF;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    margin-bottom: 0;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 0;
+}
+#ssvzone_6 .ssvzHeader {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvborder.png");
+    background-origin: padding-box;
+    background-position: 5px -18px;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    height: 21px;
+    line-height: 21px;
+}
+#ssvzone_6 .ssvHeaderBr {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvtop.png");
+    background-origin: padding-box;
+    background-position: 100% 0;
+    background-repeat: repeat-y;
+    background-size: auto auto;
+    padding-right: 3px;
+}
+#ssvzone_6 .ssvzLogo {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvtop.png");
+    background-origin: padding-box;
+    background-position: -3px 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+    height: 21px;
+    line-height: 21px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    width: 140px;
+}
+#ssvzone_6 .ssvzBuy {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("http://ads.link.vn/resource/images/ssvtop.png");
+    background-origin: padding-box;
+    background-position: -3px -21px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+    float: right;
+    height: 21px;
+    width: 140px;
+}
+#ssvzone_6 .ssvzclear {
+    clear: both;
+}
+#ssvzone_6 #ssvzone_6_items {
+    height: 157px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+#ssvzone_6_items .adv_items {
+    float: left;
+    height: 150px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 222px;
+}
+#ssvzone_6_items .adv_items .ssvzimage {
+    clear: both;
+}
+#ssvzone_6_items .adv_items .ssvzimage img {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+    float: left;
+    height: 90px;
+    margin-right: 5px;
+    width: 90px;
+}
+#ssvzone_6_items .adv_items .ssvzTitle {
+    clear: both;
+    height: 32px;
+    line-height: 15px;
+    text-align: left;
+}
+#ssvzone_6_items .adv_items .ssvzTitle a:link, #ssvzone_6_items .adv_items .ssvzTitle a:visited {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    color: #333333;
+    font-family: tahoma,arial,verdana;
+    font-size: 11px;
+    font-weight: 700 !important;
+    padding-top: 0;
+    text-align: center;
+}
+#ssvzone_6_items .itemmc {
+    clear: both;
+    float: left;
+    height: 17px;
+    line-height: 12px;
+    margin-bottom: 3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 2px;
+    text-align: left;
+}
+#ssvzone_6_items .itemmc, #ssvzone_6_items .itemmc a:visited, #ssvzone_6_items .itemmc a:active, #ssvzone_6_items .itemmc a:link {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    color: #666666;
+    margin-bottom: 2px;
+}
+#ssvzone_6_items .adv_items .price {
+    height: 87px;
+    line-height: 16px;
+    padding-left: 5px;
+    text-align: left;
+}
+#ssvzone_6_items .adv_items .price a:link, #ssvzone_6_items .adv_items .price a:visited {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    color: #333333;
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: 400;
+}
+#ssvzone_6_items .ssvzBorder {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #E5E5E5;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    float: left;
+    height: 157px;
+    width: 1px;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+    <category name="General">
+        <property name="nThread" value="5" />
+    </category>
+    <category name="DBPool">
+        <property name="driver" value="com.mysql.jdbc.Driver" />
+        <property name="url_db" value="jdbc:mysql://localhost:3306/advertise_link_vn?useUnicode=true&amp;characterEncoding=UTF-8" />
+        <property name="user" value="adv.link.vn" />
+        <property name="pass" value="adv.link.vn" />
+        <property name="max_connection" value="15"/>
+        <property name="init_connection" value="10"/>
+        <property name="time_out" value="180"/>
+    </category>
+    <category name="ThreadPool">
+        <property name="coreSize" value="100"/>
+        <property name="maxThreadsSize" value="10000"/>
+        <property name="timWait" value="180"/>
+        <property name="unit" value="SECONDS"/>
+    </category>
+</properties>
+

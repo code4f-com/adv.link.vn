@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <filter>
+        <filter-name>ExpiresFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.ExpiresFilter</filter-class>
+        <init-param>
+            <param-name>ExpiresByType image</param-name>
+            <param-value>access plus 1 weeks</param-value>
+            <!--<param-name>ExpiresByType text/html</param-name><param-value>access plus 1 month 15   days 2 hours</param-value>-->
+<!--            where <base> is one of:
+                access
+                now (equivalent to 'access')
+                modification
+                The plus keyword is optional. <num> should be an integer value (acceptable to Integer.parseInt()), and <type> is one of:
+                        years
+                        months
+                        weeks
+                        days
+                        hours
+                        minutes
+                        seconds
+                        -->
+        </init-param>
+<!--     <init-param>
+            <param-name>ExpiresByType text/css</param-name>
+            <param-value>access plus 10 minutes</param-value>
+        </init-param>
+       <init-param>
+            <param-name>ExpiresByType application/javascript</param-name>
+            <param-value>access plus 10 minutes</param-value>
+        </init-param>
+		-->
+    </filter>
+    <filter-mapping>
+        <filter-name>ExpiresFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    
+    <!--MONITOR-->
+    <listener>
+        <listener-class>net.bull.javamelody.SessionListener</listener-class>
+    </listener>
+    <!--Security-->
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Monitoring</realm-name>
+    </login-config>
+    <security-role>
+        <role-name>monitoring</role-name>
+    </security-role>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Monitoring</web-resource-name>
+            <url-pattern>/monitoring</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>monitoring</role-name>
+        </auth-constraint>
+        <!-- if SSL enabled (SSL and certificate must then be configured in the server)
+        <user-data-constraint>
+                <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint> 
+        -->
+    </security-constraint>
+    <!--END MONITOR-->
+    <context-param>
+        <param-name>config</param-name>
+        <param-value>/WEB-INF/classes/config</param-value>
+    </context-param>
+    <filter>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+        <!-- sets up amount conf file will be checked for reload
+        can be a valid integer (0 denotes check every time,
+        empty/not set denotes no reload check)          -->
+        <init-param>
+            <param-name>confReloadCheckInterval</param-name>
+            <param-value>30</param-value>
+        </init-param>
+        <!--        <init-param>
+            <param-name>logLevel</param-name>
+            <param-value>DEBUG</param-value>
+        </init-param>-->
+    </filter>
+    <filter-mapping>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- END reWrite-->
+    <listener>
+        <listener-class>config.ListionContext</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>SessionSv</servlet-name>
+        <servlet-class>gk.adv.linnk.vn.share.session.SessionSv</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionSv</servlet-name>
+        <url-pattern>/SessionSv</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
