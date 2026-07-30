@@ -8,9 +8,8 @@
         <%@include file="/includes/header.jsp" %>
     </head>
     <body>
-        <%            ArrayList all = null;
-            City dao = new City();
-            all = dao.getAll(1, null);
+        <%            City dao = new City();
+            ArrayList all = dao.getAll(1, null);
         %>
         <div id="main_container">
             <%@include file="/includes/checkLogin.jsp" %>
@@ -19,8 +18,7 @@
                 <div class="center_content">
                     <div class="right_content">
                         <div align="center" style="height: 20px;margin-bottom: 2px; color: red;font-weight: bold">
-                            <%
-                                if (session.getAttribute("mess") != null) {
+                            <%                                if (session.getAttribute("mess") != null) {
                                     out.print(session.getAttribute("mess"));
                                     session.removeAttribute("mess");
                                 }
@@ -58,7 +56,7 @@
                                         <%= oneAdmin.getMyname()%>
                                     </td>
                                     <td align="center">
-                                        <%=buildRegion(oneAdmin.getRegion()) %>
+                                        <%=buildRegion(oneAdmin.getRegion())%>
                                     </td>
                                     <td align="center">
                                         <%=oneAdmin.getGgCode()%>

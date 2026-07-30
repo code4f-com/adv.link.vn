@@ -133,7 +133,7 @@
                                             <%=oneSite.getDomain()%>
                                         </td>
                                         <td style="border-right: solid 1px #00ccff" align="left">
-                                            <img style="max-width: 64px" onerror="src='/resource/images/default.gif'" src="<%=oneSite.getDisplayPath()%>" />
+                                            <img style="max-width: 64px" onerror="src='<%= request.getContextPath()%>/resource/images/default.gif'" src="<%=oneSite.getDisplayPath()%>" />
                                         </td>
                                         <td style="border-right: solid 1px #00ccff" align="center">
                                             <%= oneSite.getPriceClick()%>

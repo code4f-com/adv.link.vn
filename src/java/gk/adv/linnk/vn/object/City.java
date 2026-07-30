@@ -16,22 +16,28 @@ import net.sf.ehcache.Element;
 import org.apache.log4j.Logger;
 
 /**
- * 
+ *
  * @author TUANPLA
  */
 public class City {
 
-    static Logger logger = Logger.getLogger(City.class);
+    static final Logger logger = Logger.getLogger(City.class);
     private static final String KEY_ALL = "City.cacheAll";
 
     static {
-        HashMap<String, City> CACHE = new HashMap<>();
-        City ctDao = new City();
-        List<City> all = ctDao.getAllCity();
-        for (City one : all) {
-            CACHE.put(one.getMyCode(), one);
+        try {
+            HashMap<String, City> CACHE = new HashMap<>();
+            City ctDao = new City();
+            List<City> all = ctDao.getAllCity();
+            for (City one : all) {
+                CACHE.put(one.getMyCode(), one);
+            }
+            CacheUtil.cache12h.put(new Element(KEY_ALL, CACHE));
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
-        CacheUtil.cache12h.put(new Element(KEY_ALL, CACHE));
+
     }
 
     private static HashMap<String, City> reCache() {

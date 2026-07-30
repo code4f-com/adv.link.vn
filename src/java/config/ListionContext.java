@@ -4,6 +4,7 @@
  */
 package config;
 
+import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
 import gk.adv.linnk.vn.cache.CacheUtil;
 import gk.adv.linnk.vn.cache.Queue;
 import gk.adv.linnk.vn.object.GroupAdv;
@@ -92,6 +93,7 @@ public class ListionContext implements ServletContextListener {
         m = new Monitor();
         m.setPriority(Thread.MIN_PRIORITY);
         m.start();
+        AbandonedConnectionCleanupThread.uncheckedShutdown();
     }
 
     @Override
@@ -119,6 +121,11 @@ public class ListionContext implements ServletContextListener {
             } catch (SQLException e) {
                 logger.log(Level.ERROR, String.format("Error deregistering driver %s", driver), e);
             }
+        }
+        try {
+            AbandonedConnectionCleanupThread.uncheckedShutdown();
+        } catch (Throwable t) {
+            // AbandonedConnectionCleanupThread.checkedShutdown(); đối với connector mơi
         }
         System.out.println("Link.vn contextDestroyed ............");
     }
