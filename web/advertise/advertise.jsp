@@ -16,7 +16,7 @@
             function changeKind(val) {
                 location.href =<%=request.getContextPath()%>"/sys-admin/advertise-manager/show.html?kind=" + val;
             }
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('.main3').find('div.div1').hide();
                 $('input[rel*=manhungPopup]').showPopup({
                     top: 200, //khoảng cách popup cách so với phía trên
@@ -28,7 +28,7 @@
                 });
                 //-- TAB
                 // Sự kiện khi nhấn vào các tab của menu
-                $("a.tab").click(function() {
+                $("a.tab").click(function () {
                     // tắt tất cả các tab
                     $(".active").removeClass("active");
                     // bật tab đang click lên
@@ -233,80 +233,80 @@
                                             <%
                                                 if (oneADV.getKind() == Advertise.KIND.FLASH.getValue()) {
                                             %>
-                                            <embed width="90px" name="plugin" src="<%= BuildCache.DOMAIN + request.getContextPath()%>/adv-res/flash<%=oneADV.getFilePath()%>" type="application/x-shockwave-flash"></embed>
-                                            <%
-                                            } else {
-                                            %>
-                                            <img id="my_image" width="90" src="<%=BuildCache.DOMAIN + request.getContextPath() + "/adv-res/image" + oneADV.getFilePath()%>"/>
-                                            <script>getImgSize('<%=BuildCache.DOMAIN + request.getContextPath() + "/adv-res/image" + oneADV.getFilePath()%>', '<%=oneADV.getAdvID()%>')</script>
-                                            <%
-                                                }
-                                            %>
-                                            
-                                        </td>
-                                        <td style="border-right: solid 1px #00ccff" align="center"><%=oneADV.getTitle_top()%></td>
-                                        <td style="border-right: solid 1px #00ccff" align="center"><%= oneADV.getDesc()%></td>
-                                        <td style="border-right: solid 1px #00ccff" align="center">
-                                            Giá mua: <%=oneADV.getPrice_root()%><br/>
-                                            Giá bán: <%=oneADV.getPriceSell()%>
-                                        </td>
-                                        <td style="border-right: solid 1px #00ccff" align="center">
-                                            <%=Advertise.KIND.getName(oneADV.getKind())%>
-                                        </td>
-                                        <td id="status<%=oneADV.getAdvID()%>" style="border-right: solid 1px #00ccff" align="center">
-                                            <%
-                                                if (oneADV.getStatus() == 1) {
-                                                    if (adminInfo.checkEdit(request)) {
-                                            %>
-                                            <a href="" onclick="return false"><img width="24" onclick="yourChangeState('status<%=oneADV.getAdvID()%>', '<%= Constants.TYPE_CHANGE_STATUS%>', '<%=oneADV.getStatus()%>', '<%=oneADV.getAdvID()%>')" src="<%= request.getContextPath()%>/resource/images/play.png"/></a>
-                                                <%} else {
-                                                        out.print("<img width=\"20\" src=\"" + request.getContextPath() + "/resource/images/active.png\"/>");
-                                                    }
-                                                } else if (oneADV.getStatus() == 0) {
-                                                    if (adminInfo.checkEdit(request)) {
-                                                %>
-                                            <a href="" onclick="return false"><img width="24" onclick="yourChangeState('status<%=oneADV.getAdvID()%>', '<%= Constants.TYPE_CHANGE_STATUS%>', '<%=oneADV.getStatus()%>', '<%=oneADV.getAdvID()%>')" src="<%= request.getContextPath()%>/resource/images/pause.png"/></a>
-                                                <%} else {
-                                                        out.print("<img width=\"20\" src=\"" + request.getContextPath() + "/resource/images/lock.png\"/>");
-                                                    }
-                                                } else {
-                                                %>
-                                            <a href="" onclick="return false"><img width="24" onclick="yourChangeState('status<%=oneADV.getAdvID()%>', '<%= Constants.TYPE_CHANGE_STATUS%>', '<%=oneADV.getStatus()%>', '<%=oneADV.getAdvID()%>')" src="<%= request.getContextPath()%>/resource/images/Recyclebin.png"/></a>
-                                                <%}
-                                                %>
-                                        </td>
-                                        <td style="border-right: solid 1px #00ccff" align="center">
-                                            <%=DateProc.Timestamp2DDMMYYYY(oneADV.getEndTime())%>
-                                        </td>
-                                        <td align="center" style="border-right: solid 1px #00ccff">
-                                            <input type="button" class="button-popup" id="open_popup_<%=oneADV.getAdvID()%>" name="open_popup" rel="manhungPopup" href="#popup_content_<%=oneADV.getAdvID()%>" value="Mã Nhúng"/>
-                                            <div id="popup_content_<%=oneADV.getAdvID()%>" class="popup">
-                                                <ul class="tabs">
-                                                    <li><a href="#" tabval="tab2_<%=oneADV.getAdvID()%>" title="Code URL" class="tab active">JAVASCRIP</a></li>
-                                                    <li><a href="#" tabval="tab1_<%=oneADV.getAdvID()%>" title="Code HTML" class="tab">IFRAME</a></li>
-                                                    <!--<li><a href="#" tabval="tab3_<%=oneADV.getAdvID()%>" title="Code URL" class="tab">JAVASCRIP</a></li>-->
-                                                </ul>
-                                                <div style="border: 0px;display: none" id="tab1_<%=oneADV.getAdvID()%>" class="content tab1">
-                                                    <div style="color: red;margin-left: 10px"> Đặt mã cho plugin của bạn bất cứ nơi nào bạn muốn plugin để xuất hiện trên trang của bạn .</div>
-                                                    <textarea cols="65" rows="10"><iframe src="<%=BuildCache.DOMAIN + request.getContextPath()%>/advertise/view-frame/iframe_<%=oneADV.getAdvID()%>.link" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:100%" allowTransparency="true"></iframe></textarea>
-                                                    <div class="info_popup">
-                                                    </div>
-                                                </div>
-                                                <div  style="border: 0px" id="tab2_<%=oneADV.getAdvID()%>" class="content tab2">
-                                                    <div style="color: red;margin-left: 10px"> Ngày tao: <%=DateProc.Timestamp2DDMMYYYY(oneADV.getCreateDate())%></div>
-                                                    <textarea cols="65" rows="10"><script type="text/javascript" src="<%=BuildCache.DOMAIN + request.getContextPath() + "/advertise/js_core/single_" + oneADV.getAdvID() + ".link"%>" ></script></textarea>
+                                <embed width="90px" name="plugin" src="<%= BuildCache.DOMAIN + request.getContextPath()%>/adv-res/flash<%=oneADV.getFilePath()%>" type="application/x-shockwave-flash"></embed>
+                                    <%
+                                    } else {
+                                    %>
+                                <img id="my_image" width="90" src="<%=BuildCache.DOMAIN + request.getContextPath() + "/adv-res/image" + oneADV.getFilePath()%>"/>
+                                <script>getImgSize('<%=BuildCache.DOMAIN + request.getContextPath() + "/adv-res/image" + oneADV.getFilePath()%>', '<%=oneADV.getAdvID()%>')</script>
+                                <%
+                                    }
+                                %>
+
+                                </td>
+                                <td style="border-right: solid 1px #00ccff" align="center"><%=oneADV.getTitle_top()%></td>
+                                <td style="border-right: solid 1px #00ccff" align="center"><%= oneADV.getDesc()%></td>
+                                <td style="border-right: solid 1px #00ccff" align="center">
+                                    Giá mua: <%=oneADV.getPrice_root()%><br/>
+                                    Giá bán: <%=oneADV.getPriceSell()%>
+                                </td>
+                                <td style="border-right: solid 1px #00ccff" align="center">
+                                    <%=Advertise.KIND.getName(oneADV.getKind())%>
+                                </td>
+                                <td id="status<%=oneADV.getAdvID()%>" style="border-right: solid 1px #00ccff" align="center">
+                                    <%
+                                        if (oneADV.getStatus() == 1) {
+                                            if (adminInfo.checkEdit(request)) {
+                                    %>
+                                    <a href="" onclick="return false"><img width="24" onclick="yourChangeState('status<%=oneADV.getAdvID()%>', '<%= Constants.TYPE_CHANGE_STATUS%>', '<%=oneADV.getStatus()%>', '<%=oneADV.getAdvID()%>')" src="<%= request.getContextPath()%>/resource/images/play.png"/></a>
+                                        <%} else {
+                                                out.print("<img width=\"20\" src=\"" + request.getContextPath() + "/resource/images/active.png\"/>");
+                                            }
+                                        } else if (oneADV.getStatus() == 0) {
+                                            if (adminInfo.checkEdit(request)) {
+                                        %>
+                                    <a href="" onclick="return false"><img width="24" onclick="yourChangeState('status<%=oneADV.getAdvID()%>', '<%= Constants.TYPE_CHANGE_STATUS%>', '<%=oneADV.getStatus()%>', '<%=oneADV.getAdvID()%>')" src="<%= request.getContextPath()%>/resource/images/pause.png"/></a>
+                                        <%} else {
+                                                out.print("<img width=\"20\" src=\"" + request.getContextPath() + "/resource/images/lock.png\"/>");
+                                            }
+                                        } else {
+                                        %>
+                                    <a href="" onclick="return false"><img width="24" onclick="yourChangeState('status<%=oneADV.getAdvID()%>', '<%= Constants.TYPE_CHANGE_STATUS%>', '<%=oneADV.getStatus()%>', '<%=oneADV.getAdvID()%>')" src="<%= request.getContextPath()%>/resource/images/Recyclebin.png"/></a>
+                                        <%}
+                                        %>
+                                </td>
+                                <td style="border-right: solid 1px #00ccff" align="center">
+                                    <%=DateProc.Timestamp2DDMMYYYY(oneADV.getEndTime())%>
+                                </td>
+                                <td align="center" style="border-right: solid 1px #00ccff">
+                                    <input type="button" class="button-popup" id="open_popup_<%=oneADV.getAdvID()%>" name="open_popup" rel="manhungPopup" href="#popup_content_<%=oneADV.getAdvID()%>" value="Mã Nhúng"/>
+                                    <div id="popup_content_<%=oneADV.getAdvID()%>" class="popup">
+                                        <ul class="tabs">
+                                            <li><a href="#" tabval="tab2_<%=oneADV.getAdvID()%>" title="Code URL" class="tab active">JAVASCRIP</a></li>
+                                            <li><a href="#" tabval="tab1_<%=oneADV.getAdvID()%>" title="Code HTML" class="tab">IFRAME</a></li>
+                                            <!--<li><a href="#" tabval="tab3_<%=oneADV.getAdvID()%>" title="Code URL" class="tab">JAVASCRIP</a></li>-->
+                                        </ul>
+                                        <div style="border: 0px;display: none" id="tab1_<%=oneADV.getAdvID()%>" class="content tab1">
+                                            <div style="color: red;margin-left: 10px"> Đặt mã cho plugin của bạn bất cứ nơi nào bạn muốn plugin để xuất hiện trên trang của bạn .</div>
+                                            <textarea cols="65" rows="10"><iframe src="<%=BuildCache.DOMAIN + request.getContextPath()%>/advertise/view-frame/iframe_<%=oneADV.getAdvID()%>.link" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:100%" allowTransparency="true"></iframe></textarea>
+                                            <div class="info_popup">
+                                            </div>
+                                        </div>
+                                        <div  style="border: 0px" id="tab2_<%=oneADV.getAdvID()%>" class="content tab2">
+                                            <div style="color: red;margin-left: 10px"> Ngày tao: <%=DateProc.Timestamp2DDMMYYYY(oneADV.getCreateDate())%></div>
+                                            <textarea cols="65" rows="10"><script type="text/javascript" src="<%=BuildCache.DOMAIN + request.getContextPath() + "/advertise/js_core/single_" + oneADV.getAdvID() + ".link"%>" ></script></textarea>
                                                     <div class="info_popup">
                                                     </div>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td style="border-right: solid 1px #00ccff"><a target="_blank" href="<%="/advertise/single/preview_" + oneADV.getAdvID() + ".link"%>" >Xem truoc</a></td>
-                                        <%if (adminInfo.checkEdit(request)) {%><td style="border-right: solid 1px #00ccff"><a href="<%=request.getContextPath() + "/sys-admin/advertise-manager/edit/" + oneADV.getAdvID() + "&kind=" + oneADV.getKind()%>" ><img src="<%= request.getContextPath()%>/resource/images/user_edit.png" alt="" title="" border="0" /></a></td><%}%>
-                                        <%if (adminInfo.checkDel(request)) {%><td><a href="<%=(oneADV.getStatus() == Advertise.STATUS.DELETE.getValue()) ? "/sys-admin/advertise-manager/del/ever-" + oneADV.getAdvID() : "/sys-admin/advertise-manager/del/" + oneADV.getAdvID()%>" class="ask"><img src="<%= request.getContextPath()%>/resource/images/trash.png" alt="" title="" border="0" /></a></td><%}%>
+                                        <td style="border-right: solid 1px #00ccff"><a target="_blank" href="<%=request.getContextPath() + "/advertise/single/preview_" + oneADV.getAdvID() + ".link"%>" >Xem truoc</a></td>
+                                <%if (adminInfo.checkEdit(request)) {%><td style="border-right: solid 1px #00ccff"><a href="<%=request.getContextPath() + "/sys-admin/advertise-manager/edit/" + oneADV.getAdvID() + "&kind=" + oneADV.getKind()%>" ><img src="<%= request.getContextPath()%>/resource/images/user_edit.png" alt="" title="" border="0" /></a></td><%}%>
+                                <%if (adminInfo.checkDel(request)) {%><td><a href="<%=(oneADV.getStatus() == Advertise.STATUS.DELETE.getValue()) ? "/sys-admin/advertise-manager/del/ever-" + oneADV.getAdvID() : "/sys-admin/advertise-manager/del/" + oneADV.getAdvID()%>" class="ask"><img src="<%= request.getContextPath()%>/resource/images/trash.png" alt="" title="" border="0" /></a></td><%}%>
                                     </tr>
-                                    <%
-                                        }
-                                    %>
+                                <%
+                                    }
+                                %>
                                 </tbody>
                             </table></div>
                             <%@include file="/includes/page.jsp" %>
